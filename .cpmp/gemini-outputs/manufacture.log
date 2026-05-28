@@ -1,0 +1,20 @@
+[2026-05-27 21:56:34] cpmp v30.1.1 Manufacture Starting
+[2026-05-27 21:56:34] Phases to run: phase-discovery-portfolio
+[2026-05-27 21:56:34] Plan file: /Users/sac/.claude/plans/cpmp-v30-1-1-sharded-steele.md
+[2026-05-27 21:56:34] ═══════════════════════════════════════════════════════════
+[2026-05-27 21:56:34] Starting Phase Discovery: Portfolio Capability Inventory
+[2026-05-27 21:56:34] ═══════════════════════════════════════════════════════════
+[2026-05-27 21:56:34] Completed Phase Discovery: Portfolio Capability Inventory → /Users/sac/capability-map/.cpmp/gemini-outputs/phase-discovery-portfolio-output.md
+[2026-05-27 21:56:34] ═══════════════════════════════════════════════════════════
+[2026-05-27 21:56:34] Manufacture Complete
+[2026-05-27 21:56:34] All outputs: /Users/sac/capability-map/.cpmp/gemini-outputs
+[2026-05-27 21:56:34] Verify with: cargo check && cargo test
+[2026-05-27 21:56:34] ═══════════════════════════════════════════════════════════
+[2026-05-27 21:58:06] cpmp v30.1.1 Manufacture Starting
+[2026-05-27 21:58:06] Phases to run: phase-discovery-portfolio phase-0 phase-1 phase-2 phase-3 phase-4
+[2026-05-27 21:58:06] Plan file: /Users/sac/.claude/plans/cpmp-v30-1-1-sharded-steele.md
+[2026-05-27 21:58:06] ✓ Discovery phase can run first to catalog ~/portfolio
+[2026-05-27 21:58:06]   Set SKIP_DISCOVERY=1 to skip, or run: scripts/cpmp-manufacture.sh --phase phase-discovery-portfolio
+[2026-05-27 21:58:06] ═══════════════════════════════════════════════════════════
+[2026-05-27 21:58:06] Starting Phase Discovery: Portfolio Capability Inventory
+[2026-05-27 21:58:06] ═══════════════════════════════════════════════════════════

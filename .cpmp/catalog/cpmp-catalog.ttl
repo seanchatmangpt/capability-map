@@ -1,0 +1,2 @@
+@prefix prov: <http://www.w3.org/ns/prov#> .
+<urn:cpmp:scan:a18fe247-725e-4323-8ffa-b376014b1b1d> a prov:Activity .

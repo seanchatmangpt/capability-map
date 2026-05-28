@@ -1,0 +1,56 @@
+You are implementing cpmp v30.1.1 Phase 2: Receipt Enhancement + Gall Checkpoints.
+
+Context:
+- Phases 0-1 complete: cargo check 0 errors, canon_basis[] infrastructure working
+- Plan file: /Users/sac/.claude/plans/cpmp-v30-1-1-sharded-steele.md (Phase 2 section)
+- Goal: Implement 7 cryptographic hash fields on ScanReceipt and 5 Gall Checkpoints GL-0..GL-4
+
+Modify: src/models.rs (Phase 2 extension)
+  - Extend ScanReceipt with 5 new fields:
+    pub output_hash: String,           // BLAKE3 of all output artifact bytes
+    pub capability_hash: String,       // BLAKE3 of sorted capability names
+    pub catalog_hash: String,          // BLAKE3 of cpmp-catalog.ttl
+    pub prior_receipt_hash: String,    // BLAKE3 of previous receipt; "" if none
+    pub operator_identity: String,     // $CPMP_OPERATOR or "hostname:username"
+    pub tool_version: String,          // env!("CARGO_PKG_VERSION")
+  - Add GallCheckpoint enum: GL0, GL1, GL2, GL3, GL4
+  - Add GallCheckpointResult struct: checkpoint, label: &'static str, result: GateResult, evidence: String
+
+Modify: src/receipt.rs (Phase 2 extension)
+  - Split generate_receipt into two phases:
+    Phase 1: generate_receipt(out: &Path, files: &[FileEntry]) → ScanReceipt
+      - Computes root_hash, prior_receipt_hash, operator_identity, tool_version
+      - Leaves output_hash, capability_hash, catalog_hash empty
+    Phase 2: finalise_receipt(receipt, catalog_dir, capabilities, out) → ScanReceipt
+      - Fills output_hash by BLAKE3-ing all catalog dir artifacts (sorted by filename)
+      - Fills capability_hash by BLAKE3-ing sorted capability names
+      - Fills catalog_hash by calling rdf::catalog_source_hash()
+      - Writes receipt TOML to out/receipts/scan_{id}.toml
+  - Update verify_no_deletion to return NoDeletionReport with pass: bool, deleted_files: Vec<PathBuf>
+
+Modify: src/gates.rs (Phase 2 extension)
+  - Add checkpoint_gl0(out_dir: &Path) → GallCheckpointResult (checks catalog_dir + receipts/ exist)
+  - Add checkpoint_gl1(before: &ScanReceipt, after: &ScanReceipt) → GallCheckpointResult (no-deletion pass)
+  - Add checkpoint_gl2(catalog_dir: &Path, receipt: &ScanReceipt) → GallCheckpointResult (wraps run_admission_gates)
+  - Add checkpoint_gl3(catalog_dir: &Path) → GallCheckpointResult (delegates to policy packs)
+  - Add checkpoint_gl4(out_dir: &Path) → GallCheckpointResult (enterprise doctor checks)
+  - Add evaluate_gall_checkpoints(out_dir, receipt) → Vec<GallCheckpointResult> (orchestrator)
+
+Modify: src/scanner.rs (Phase 2 integration)
+  - Two-phase receipt generation:
+    1. After walk+symbols+capabilities, call receipt::generate_receipt (Phase 1)
+    2. After rdf::build_and_emit, call receipt::finalise_receipt (Phase 2)
+    3. Write finalized receipt to disk
+
+Success criterion:
+  1. cargo check produces 0 errors
+  2. cargo test passes all tests (8 existing + new receipt tests)
+  3. ScanReceipt TOML round-trip preserves all 7 hash fields
+  4. All 5 Gall Checkpoints (GL-0 through GL-4) evaluate correctly
+  5. GL-2 gracefully skips if open-ontologies binary not available
+
+Implementation notes:
+  - prior_receipt_hash: scan receipts dir for latest TOML by mtime, BLAKE3 its bytes. "" if none.
+  - operator_identity: try env var CPMP_OPERATOR; fallback to "hostname:username"
+  - output_hash algorithm: read all files in catalog_dir, sort by filename, BLAKE3 each file's bytes, then BLAKE3 the concatenated hashes
+  - GL-2 is the only checkpoint requiring external binary; wrap in try-catch or skip gracefully if missing

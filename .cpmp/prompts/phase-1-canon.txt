@@ -1,0 +1,49 @@
+You are implementing cpmp v30.1.1 Phase 1: Frozen Canon Registry.
+
+Context:
+- Phase 0 (Foundation) is complete and `cargo check` produces 0 errors
+- Plan file: /Users/sac/.claude/plans/cpmp-v30-1-1-sharded-steele.md (Phase 1 section)
+- This phase introduces the First Law: No movable part executes without canon_basis[]
+
+Your task: Create the Frozen Canon Registry infrastructure.
+
+New file: src/canon.rs
+  - Define CapabilityRule struct with fields: name, canon_basis, pattern, classification, category
+  - Create CANON_REGISTRY constant with 29 CapabilityRules:
+    Genesis, ggen, Truex, Receipt, Replay, Refusal, Construct8, Pair2, RelationPage,
+    Need9, Need257, Shard, Segment, Corpus, O*, mu, AtomVM, Erlang, WASM,
+    POWL, OCEL, PROV, SHACL, DCAT, Field8, Instinct8, Doctor, Wizard, Telco
+  - Each term gets canon_basis from Scripture + AA doctrine (see plan for mapping)
+  - Pattern field: regex source string (r"(?i)\bTerm\b" for most; r"O\*" for O*; r"\bmu\b" case-sensitive for mu)
+  - Store as &'static [&'static str] to allow &'static const registry
+
+Modify: src/classification.rs
+  - Replace empty stub with Category enum: Compute, Storage, Network, Protocol, Security, Ui, Data, Test, Doc
+  - Implement classify(capability: &str) → Category function that delegates to CANON_REGISTRY lookup
+
+Modify: src/capability.rs
+  - Refactor detect_capabilities to drive detection from CANON_REGISTRY + extra_rules
+  - Add per-line iteration for line_number tracking (Option<u32>)
+  - Add confidence scoring: 1.0 (exact case), 0.9 (word boundary), 0.7 (contains)
+  - Return DetectedCapability with new fields populated
+
+Modify: src/models.rs (Phase 1 extension)
+  - Extend DetectedCapability struct with:
+    pub line_number: Option<u32>,
+    pub confidence: f32,
+    pub canon_basis: Vec<String>,  // owned copy from &'static [&'static str]
+  - Add #[serde(default)] on new fields for backward compat
+
+Modify: src/lib.rs
+  - Add pub mod canon;
+
+Success criterion:
+  1. cargo check produces 0 errors
+  2. cargo test passes all 8 existing tests (Phase 0 tests still pass)
+  3. All 29 terms in CANON_REGISTRY have canon_basis entries
+  4. New fields in DetectedCapability serialize/deserialize correctly
+
+Implementation notes:
+  - Canon basis for each term must cite scriptural or doctrinal sources
+  - Patterns must be regex-safe (escape metacharacters like * in O*)
+  - The 29-term registry is frozen from this point forward — document it as canonical

@@ -1,0 +1,35 @@
+id = "9991e4ca-feb8-49a8-8ffd-34854a117eca"
+timestamp = "2026-05-28T03:37:06.254902+00:00"
+aggregate_hash = "4a10573cca99723240a15dd2843bf4c8042274898cf15e654febcd04ca7d6e5c"
+file_count = 5
+total_bytes = 1925
+
+[[files]]
+path = "fixtures/tiny-repo/Cargo.toml"
+hash = "d042cc0589e8136357b21bc4d416b487711f93920bc2abd220627ca314b871c2"
+size = 64
+language = ""
+
+[[files]]
+path = "fixtures/tiny-repo/tests/receipt_test.rs"
+hash = "73b00f0c05948129cc6c8001fb5f9c6e2f44f411b19099da02147f108c100430"
+size = 598
+language = ""
+
+[[files]]
+path = "fixtures/tiny-repo/README.md"
+hash = "b699b28bb2a236e602ede9b9fa0947d7959cf27e8fc0b426c1a93eea349a9f55"
+size = 309
+language = ""
+
+[[files]]
+path = "fixtures/tiny-repo/src/lib.rs"
+hash = "61018e84203fc1056a5570f8625787f1d009604d7baf2ee08566dcccc3d1f0d2"
+size = 698
+language = ""
+
+[[files]]
+path = "fixtures/tiny-repo/src/main.rs"
+hash = "8b24bc6345b2d5a3fc9cf6f6319d5468932dce0a569adaa356f2cab9a51d0ab2"
+size = 256
+language = ""

@@ -1,0 +1,66 @@
+You are implementing cpmp v30.1.1 Phase 4: Consequence Manifolds.
+
+Context:
+- Phases 0-3 complete: Full foundation, canon registry, receipts, gall-cap working
+- Plan file: /Users/sac/.claude/plans/cpmp-v30-1-1-sharded-steele.md (Phase 4 section)
+- Goal: Build the Consequence Manifold (capability topology graph)
+
+New file: src/manifold.rs
+  - Define EdgeType enum: CoOccurrence, Calls, Implements, DependsOn
+  - Define CapabilityEdge struct: from: String, to: String, edge_type: EdgeType, evidence: String, admissible: bool
+  - Define ConsequenceManifold struct: nodes: Vec<String>, edges: Vec<CapabilityEdge>, topology_hash: String, scan_id: String
+  - Implement build_manifold(caps: &[DetectedCapability], scan_id: &str) → ConsequenceManifold
+    Algorithm:
+      1. Group capabilities by file_path
+      2. For each file with 2+ distinct capability names, emit CoOccurrence edge between every pair
+      3. Deduplicate edges (same from+to collapses to one, keep first evidence)
+      4. Extract unique capability names into sorted nodes: Vec
+      5. Sort edges by (from, to) for deterministic order
+      6. Compute topology_hash: BLAKE3 of serde_json::to_string(&(sorted_nodes, sorted_edges))
+      7. Return ConsequenceManifold with scan_id set to the provided ID
+
+Modify: src/scanner.rs (Phase 4 integration)
+  - After all capabilities collected, call manifold::build_manifold(&all_capabilities, &rec.id)
+  - Write manifold JSON to out/catalog/cpmp-manifold.json
+  - Call db::insert_manifold_edges(conn, &rec.id, &manifold.edges)
+
+Modify: src/db.rs (Phase 4 extension)
+  - Add capability_transitions table:
+    CREATE TABLE IF NOT EXISTS capability_transitions (
+      id INTEGER PRIMARY KEY AUTOINCREMENT, scan_id TEXT NOT NULL,
+      from_cap TEXT NOT NULL, to_cap TEXT NOT NULL, edge_type TEXT NOT NULL,
+      evidence TEXT NOT NULL, admissible INTEGER NOT NULL DEFAULT 1
+    )
+  - Add insert_manifold_edges(conn: &Connection, scan_id: &str, edges: &[CapabilityEdge]) → Result<()>
+
+Modify: src/rdf.rs (Phase 4 extension)
+  - Add emit_manifold_edges(store: &Store, edges: &[CapabilityEdge]) → Result<()>
+  - For each edge, emit RDF triples:
+    from_capability_node skos:related to_capability_node .
+    from_capability_node rdfs:comment "CoOccurrence: evidence_path" .
+  - Call emit_manifold_edges from build_and_emit after capability loop
+  - Vocabularies: skos: and rdfs: are already declared; no new namespaces needed
+
+Modify: src/lib.rs
+  - Add pub mod manifold;
+
+Add integration tests in tests/integration_tests.rs
+  - test_manifold_built_from_scan: Verify manifold JSON is emitted after scan
+  - test_manifold_edges_in_catalog_ttl: Verify skos:related triples appear in TTL
+
+Success criterion:
+  1. cargo check produces 0 errors
+  2. cargo test passes all 10 tests (8 existing + 2 new manifold tests)
+  3. cpmp-manifold.json is written to catalog directory
+  4. Manifold nodes are sorted, edges are deduplicated
+  5. topology_hash is reproducible (same inputs → same hash)
+  6. skos:related triples appear in cpmp-catalog.ttl
+  7. Full E2E pipeline works: cargo run -- computer discover fixtures/tiny-repo --out /tmp/test-cpmp
+
+Implementation notes:
+  - CoOccurrence edges are the only edge type for v30.1.1 (static scanner only; Calls/Implements/DependsOn require symbol cross-reference and are deferred)
+  - Evidence format: "{file_path}:co-occurrence"
+  - Deduplicate by keeping first evidence of each (from, to) pair
+  - topology_hash uses BLAKE3 over deterministically serialized JSON (sorted nodes + edges) for reproducibility
+  - Write manifold.json immediately after building, before DB insert
+  - RDF emission uses public vocabularies only (skos:related is W3C SKOS, rdfs:comment is W3C RDF Schema)

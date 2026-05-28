@@ -1,12 +1,8 @@
-pub mod capability;
-pub mod error;
-pub mod gates;
-pub mod models;
-pub mod policy;
-pub mod projection;
-pub mod rdf;
-pub mod receipt;
 pub mod scanner;
+pub mod receipt;
 pub mod symbol;
+pub mod capability;
+pub mod classification;
 pub mod db;
-pub mod report;
+pub mod projection;
+pub mod models;

@@ -1,0 +1,82 @@
+You are implementing cpmp v30.1.1 Phase Discovery: Portfolio Capability Inventory.
+
+Context:
+- This phase PRECEDES Phase 0 (Foundation)
+- Goal: Use cpmp to scan the entire ~/ portfolio (~100+ projects) and build a master capability inventory
+- Tool: cpmp (the codebase itself, currently pre-v30.1.1 but functional enough for scanning)
+- Output: Master receipt chain + capability inventory across all projects
+
+Task: Orchestrate a portfolio-wide capability discovery scan.
+
+Step 1: Identify Project Roots
+  - Find all Cargo.toml, package.json, go.mod, requirements.txt, pom.xml files in ~/
+  - Group by directory (project root = top-level directory containing these files)
+  - Exclude: .git, node_modules, target, venv, build, dist, .cache, .claude, .cpmp
+  - Target: ~100+ projects across multiple languages
+
+Step 2: Create Portfolio Scan Manifest
+  - Build a JSON manifest: { "projects": [ { "path": "...", "language": "...", "root": "..." }, ... ] }
+  - Save to .cpmp/portfolio-manifest.json
+  - Sort by path for deterministic ordering
+
+Step 3: Run cpmp Scan Across Portfolio
+  - For each project (or in batches of 10), call:
+    cpmp computer discover <project_path> --out .cpmp/scans/<project_name>
+  - Capture each scan's receipt TOML file
+  - Chain receipts: each scan's prior_receipt_hash references the previous scan
+
+Step 4: Merge Receipts into Master Chain
+  - Concatenate all individual scan receipts into .cpmp/portfolio-receipts.json (JSONL format)
+  - Build a receipt chain: each receipt.prior_receipt_hash = previous receipt.root_hash
+  - Compute master_portfolio_hash = BLAKE3(all receipt hashes concatenated)
+  - Write .cpmp/portfolio-receipt-chain.toml with:
+    - scan_count: number of projects scanned
+    - total_files: sum of all file counts
+    - total_bytes: sum of all byte counts
+    - master_hash: BLAKE3 of chain
+    - start_time: first scan timestamp
+    - end_time: last scan timestamp
+
+Step 5: Merge Capability Inventories
+  - Aggregate all detected capabilities from all scans
+  - Deduplicate by (file_path, capability) tuple
+  - Generate .cpmp/PORTFOLIO_CAPABILITY_INVENTORY.md with:
+    - Capabilities by count (most common first)
+    - Capabilities by language
+    - Capabilities by project
+    - File locations for each capability
+  - Generate .cpmp/capability-index.json (machine-readable):
+    { "capabilities": [ { "name": "...", "count": N, "projects": [...], "files": [...] }, ... ] }
+
+Step 6: Validate No-Deletion
+  - If prior portfolio scan exists at .cpmp/portfolio-prior.toml, verify:
+    cpmp verify-no-deletion --before .cpmp/portfolio-prior.toml --after .cpmp/portfolio-receipt-chain.toml
+  - If any files have been deleted, emit refusal artifact: .cpmp/DELETION-DETECTED.md with full list
+  - Store current chain as .cpmp/portfolio-prior.toml for next scan
+
+Step 7: Generate Portfolio Report
+  - Create .cpmp/PORTFOLIO_STATUS.md with:
+    - Total projects scanned
+    - Total files analyzed
+    - Total capabilities discovered
+    - Top 20 capabilities by frequency
+    - Project count by language
+    - Largest projects by file count
+    - Smallest projects (potential orphans)
+    - Any projects with 0 detected capabilities (suspicious — list them)
+
+Success Criterion:
+  1. All ~100+ projects scanned without errors
+  2. Receipt chain is unbroken (each receipt references prior)
+  3. master_portfolio_hash is reproducible (same inputs → same hash)
+  4. No-deletion check passes (or explicit refusal if files deleted)
+  5. Portfolio inventory complete and discoverable
+  6. Silent loss class detected: projects with 0 capabilities are flagged
+
+Implementation notes:
+  - Use `find ~/` with careful exclusion patterns to avoid scanning build artifacts, caches, git objects
+  - Batch by 10 projects per invocation to avoid overwhelming the filesystem scanner
+  - Preserve full file paths in capability index (not just filenames) for traceability
+  - If any scan fails, capture error and continue (resilient scanning)
+  - The portfolio manifest is the "source of truth" for what was scanned — include scan timestamp
+  - This creates the prerequisite capability inventory for Phase 0 to build upon

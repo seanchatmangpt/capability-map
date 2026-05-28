@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "open-ontologies": {
+      "command": "open-ontologies",
+      "args": ["server", "serve"],
+      "env": {
+        "OPEN_ONTOLOGIES_DATA_DIR": ".cpmp"
+      }
+    },
+    "ggen": {
+      "command": "ggen",
+      "args": ["mcp", "start"],
+      "env": {}
+    }
+  }
+}

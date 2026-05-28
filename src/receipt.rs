@@ -1,96 +1,27 @@
-use crate::models::{FileEntry, NoDeletionReport, ReceiptEntry, ScanReceipt, SystemInfo};
-use anyhow::Result;
-use blake3::Hasher;
-use std::path::Path;
-
-/// Generate a `ScanReceipt` for the given file list rooted at `root`.
-/// The root_hash is BLAKE3 over (sorted path:hash\n) lines — deterministic.
-pub fn generate_receipt(root: &Path, entries: &[FileEntry]) -> Result<ScanReceipt> {
-    let id = format!("rcpt_{}", uuid::Uuid::new_v4());
-    let timestamp = chrono::Utc::now().to_rfc3339();
-
-    let hostname = std::process::Command::new("hostname")
-        .output()
-        .map(|o| String::from_utf8_lossy(&o.stdout).trim().to_string())
-        .unwrap_or_else(|_| "localhost".to_string());
-
-    let mut receipt_entries: Vec<ReceiptEntry> = entries
-        .iter()
-        .map(|f| ReceiptEntry {
-            path: f.path.to_string_lossy().to_string(),
-            hash: f.hash.clone(),
-            size: f.size,
-        })
-        .collect();
-    receipt_entries.sort_by(|a, b| a.path.cmp(&b.path));
-
-    // Root hash — BLAKE3 over sorted "path:hash\n" entries
-    let mut hasher = Hasher::new();
-    for e in &receipt_entries {
-        hasher.update(format!("{}:{}\n", e.path, e.hash).as_bytes());
-    }
-    let root_hash = hasher.finalize().to_hex().to_string();
-
-    let total_bytes: u64 = entries.iter().map(|f| f.size).sum();
-
-    Ok(ScanReceipt {
-        id,
-        timestamp,
-        schema_version: "1.0.0".to_string(),
-        root_paths: vec![root.to_path_buf()],
-        file_count: entries.len(),
-        total_bytes,
-        root_hash,
-        entries: receipt_entries,
-        system_info: SystemInfo {
-            pid: std::process::id(),
-            hostname,
-            os: std::env::consts::OS.to_string(),
-        },
-    })
+use std::path::PathBuf;
+use anyhow::{Result, anyhow};
+use crate::models::{FileEntry, Receipt};
+use uuid::Uuid;
+pub fn generate_receipt(files: &[FileEntry], out: &PathBuf) -> Result<Receipt> {
+    let id = Uuid::new_v4().to_string();
+    let total_bytes = files.iter().map(|f| f.size).sum();
+    let mut aggregate_hasher = blake3::Hasher::new();
+    for f in files { aggregate_hasher.update(f.hash.as_bytes()); }
+    let aggregate_hash = aggregate_hasher.finalize().to_hex().to_string();
+    let receipt = Receipt { id, timestamp: chrono::Utc::now().to_rfc3339(), aggregate_hash, file_count: files.len() as i64, total_bytes, files: files.to_vec() };
+    std::fs::create_dir_all(out.join("receipts"))?;
+    let receipt_path = out.join(format!("receipts/scan_{}.toml", receipt.id));
+    let toml = toml::to_string(&receipt)?;
+    std::fs::write(&receipt_path, toml)?;
+    Ok(receipt)
 }
-
-/// Verify no-deletion between two receipts.
-pub fn verify_no_deletion(before: &ScanReceipt, after: &ScanReceipt) -> NoDeletionReport {
-    use std::collections::HashMap;
-
-    let before_map: HashMap<&str, &str> = before
-        .entries
-        .iter()
-        .map(|e| (e.path.as_str(), e.hash.as_str()))
-        .collect();
-    let after_map: HashMap<&str, &str> = after
-        .entries
-        .iter()
-        .map(|e| (e.path.as_str(), e.hash.as_str()))
-        .collect();
-
-    let deleted_files: Vec<String> = before_map
-        .keys()
-        .filter(|p| !after_map.contains_key(*p))
-        .map(|s| s.to_string())
-        .collect();
-
-    let added_files: Vec<String> = after_map
-        .keys()
-        .filter(|p| !before_map.contains_key(*p))
-        .map(|s| s.to_string())
-        .collect();
-
-    let modified_files: Vec<String> = before_map
-        .iter()
-        .filter(|(p, h)| after_map.get(*p).map_or(false, |ah| ah != *h))
-        .map(|(p, _)| p.to_string())
-        .collect();
-
-    let pass = deleted_files.is_empty();
-
-    NoDeletionReport {
-        before_id: before.id.clone(),
-        after_id: after.id.clone(),
-        pass,
-        deleted_files,
-        added_files,
-        modified_files,
-    }
+pub fn verify_no_deletion(before_path: &PathBuf, after_path: &PathBuf) -> Result<()> {
+    let before_content = std::fs::read_to_string(before_path)?;
+    let after_content = std::fs::read_to_string(after_path)?;
+    let before: Receipt = toml::from_str(&before_content)?;
+    let after: Receipt = toml::from_str(&after_content)?;
+    let mut missing = Vec::new();
+    for bf in before.files { if !after.files.iter().any(|af| af.path == bf.path) { missing.push(bf.path); } }
+    if missing.is_empty() { println!("Verification passed. No files deleted."); Ok(()) } 
+    else { println!("REFUSAL: Files missing in after receipt:"); for p in missing { println!("- {}", p); } Err(anyhow!("Non-deletion law violated!")) }
 }

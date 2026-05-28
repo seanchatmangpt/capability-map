@@ -1,0 +1,61 @@
+You are implementing cpmp v30.1.1 Phase 0: Foundation (compilation prerequisite).
+
+Context:
+- The codebase has 14+ compilation defects and a split-brain model crisis (Receipt vs ScanReceipt)
+- Plan file: /Users/sac/.claude/plans/cpmp-v30-1-1-sharded-steele.md
+- Goal: Produce `cargo check` with 0 errors (not `cargo test` yet)
+
+Your task: Implement Phase 0 fixes in this exact order (each is a prerequisite):
+
+0-A: src/models.rs
+  - Rename Receipt → ScanReceipt
+  - Change FileEntry.path: String → PathBuf
+  - Change aggregate_hash → root_hash
+  - Add ScanReceipt::load(path: &Path) impl
+  - Keep Symbol and DetectedCapability as-is for now
+
+0-B: src/lib.rs
+  - Add 6 missing pub mod declarations:
+    pub mod policy;
+    pub mod rdf;
+    pub mod gates;
+    pub mod report;
+    pub mod error;
+    pub mod cmds;
+
+0-C: src/receipt.rs
+  - Define NoDeletionReport { pass: bool, deleted_files: Vec<PathBuf> }
+  - Change generate_receipt signature to (out: &Path, files: &[FileEntry]) → Result<ScanReceipt>
+  - Change verify_no_deletion to (&ScanReceipt, &ScanReceipt) → NoDeletionReport
+
+0-D: src/symbol.rs
+  - Change path: &str → path: &Path
+  - Change emitted kind from "function" → "fn"
+
+0-E: src/capability.rs
+  - Change signature to (path: &Path, content: &str, extra_keywords: &[String]) → Vec<DetectedCapability>
+  - Add keywords: "Receipt", "BLAKE3", "OpenOntologies"
+
+0-F: src/scanner.rs
+  - Change return type from Result<()> → Result<ScanReceipt>
+  - Call rdf::build_and_emit instead of projection::generate_rdf_fallback
+  - Remove direct db calls (moved to cmds/computer.rs)
+  - Update calls to symbol/capability to pass &Path and &[]
+
+0-G: src/db.rs
+  - Add open(path: &Path) → Result<Connection> function
+  - Add 8 stub functions: begin_scan, finish_scan, insert_capability_hit, insert_receipt, list_receipts, query_capability, get_summary, integrity_check
+  - Fix insert_files to use f.path.to_string_lossy().as_ref()
+  - Add new tables: scan_runs, receipts, repositories, capability_transitions
+  - Extend capabilities table with: evidence_type, confidence, line_number, context
+
+0-H: src/projection.rs
+  - One-line: Receipt → ScanReceipt in use statement and signature
+
+0-I: src/main.rs
+  - Wire all 7 cmds/ subcommands with clap hierarchy
+  - Create stubs for cmds/policy.rs, cmds/tenant.rs, cmds/audit.rs
+
+Success criterion: `cargo check` produces 0 errors.
+
+For each file, read it first to understand current state, then apply the changes atomically. Use the Bash tool to run `cargo check` after each file to verify progress.

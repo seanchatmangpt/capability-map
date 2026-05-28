@@ -1,0 +1,1289 @@
+id = "a18fe247-725e-4323-8ffa-b376014b1b1d"
+timestamp = "2026-05-28T03:50:49.119754+00:00"
+aggregate_hash = "b7a8d9d299c616fe18393e6e48a659f4a57846d30f43608797aa32522e26a0e9"
+file_count = 214
+total_bytes = 600833
+
+[[files]]
+path = "/Users/sac/stpnt/terraform/main.tf"
+hash = "0ca830c074c370140f373bb58303bfeb44637875118045148940644642f619c2"
+size = 3679
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/Cargo.toml"
+hash = "61b94ac0d31c1425b645a8d3154ef0dcaaad653b8087a603f83521517853cda3"
+size = 624
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/ledger.log"
+hash = "fb3e5c1f6e4f7f761e7c69adb6a07a65efb4045ca01c91c11f43e29996f4f6e1"
+size = 1938
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/stpnt_db.json"
+hash = "759679480c92b38939a3d27ea4db8ebc56b7d530aa320b462104b98e6c3eb203"
+size = 2727
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/PROJECT.md"
+hash = "7889d325041e1d9d99d58675d8dd6fb89f68763b110f2c36c72d2d8008743921"
+size = 2834
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/tests/supabase_integration_tests.rs"
+hash = "92201a4a25f0075d9ff9e42dc68538702ee80a88d1501f05222fb8bb912d3955"
+size = 7775
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/tests/e2e_tests.rs"
+hash = "5e393986e372e44a256fbf7ba69821729927565bdee1df03b73ba243ec6689e7"
+size = 60164
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/tests/ctq_tests.rs"
+hash = "0d6f973cd267f3e574288776ed01976c9ff606321f092ee6890b36ccceacb69f"
+size = 16921
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/tests/common/mod.rs"
+hash = "5ace2652327e68c7db704b81827050f8894e47c7cfb729b01c828675ab46eaac"
+size = 342
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/tests/gall_tests.rs"
+hash = "4e982fd90762e929ada1fa0f2ac8e51e8f082733a570efc38d1519ef94414794"
+size = 11234
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/tests/adversarial_tests.rs"
+hash = "1ee4f8c5bffe16ab7f2cc8494e27984faedc818e8315807c9ecf667d09c58421"
+size = 9245
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/Cargo.lock"
+hash = "a00b749bec9dc8ad646d0b711de812cca2882d54900d51c2159f321fefc39184"
+size = 54713
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/docs/swarm/FINAL_STPNT_RECEIPT.md"
+hash = "8a1c0ae7ebbd4a694b4a2b99ee4e56acc4f13188c54e48e2fb3efbf46d30ff0c"
+size = 307
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/docs/vision/VISION_2035.md"
+hash = "63b5be288338cf94cdf74179987cf39867d7ae01bc2d5100b4b5dcad268845be"
+size = 598
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/docs/GITHUB_STEWARDSHIP_MANIFEST.md"
+hash = "d75707dfe497fb6ad122ec121b1bbb891c60aecee11a3deb783186ed86799029"
+size = 123
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/docs/CANON_SET_SCHEMA.md"
+hash = "4993808eb405d61c0c5e39e82d948ac5db97a2e80b49a69166c2fd6864bbb860"
+size = 45211
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/docs/CANON_AUDIT.md"
+hash = "0c27abc2cc7a9c0b9b2ff2e086e75a6e08bb927e54a14153a7cd994713a03c4d"
+size = 18050
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/docs/VISION_2035.md"
+hash = "95bc8a3d78a26008d89297502b237185ae1da6b0ce1079f1104245a53e6a8ac3"
+size = 7764
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/supabase/migrations/001_initial_schema.sql"
+hash = "32a969c5fc6f6bdb26d57720e16dd2b85dffce7b52ce9cb3f41cb285dfc6049d"
+size = 7843
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/supabase/functions/dispatch-part/index.ts"
+hash = "36d82cb7cb4dabc5ab0ee5e2bd715426e933f156745fbd34f7a5bc95f9a9894a"
+size = 2335
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/supabase/functions/emit-andon/index.ts"
+hash = "c818200766bb6503aa5384acdb52e91d9c2251154c95fd967581bacf97bc7139"
+size = 2663
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/supabase/functions/next-obligation/index.ts"
+hash = "24478e355266a843804294d12498507eb5bba279bd5db99e1b0ed4d861c258dd"
+size = 4267
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/supabase/functions/verify-canon-basis/index.ts"
+hash = "9c5f7875635bfa9f7dd807a26d2ca307ff935687cdf9027957810a1c791aaff4"
+size = 3118
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/supabase/functions/observe-part/index.ts"
+hash = "4734eaf3698282a19e48a8397ab72df0fa9f9416130b3cac54d93e3d2bbbb7f0"
+size = 2592
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.gitignore"
+hash = "cb43051e103f43408ad06fe1c44cea0492f41d473265615ec4cede6939a4f7e0"
+size = 8
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/scripts/smoke.sh"
+hash = "44e723092f8111ce752dbc67ddd0fdb5ba68c543fa36c633d8613d5f944cdfb3"
+size = 1130
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.github/workflows/sync-stpnt-to-github.yml"
+hash = "5d5a6a48ca94d391cc6da3dd08d8c344d958699be114ca960605a30e9eaa3b17"
+size = 3884
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/ORIG_HEAD"
+hash = "5d7012d0cd30c4b34927529ca559494da9a6759bbfb4772a11082ef7aced7eae"
+size = 41
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/config"
+hash = "96c77d793f84cb1130c4c46f9fd8448154f2c9ce6c1dc1a1740826019d6e3a6c"
+size = 137
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/0d/b460119738a415b8ac6289dfc7436cd7e39fbb"
+hash = "2ee518d9a7eb85854cb9c4100f342281f9b613088d5d7267558945481cdde10a"
+size = 3445
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/95/99b6c850e2a14ca9760249cfe6a8d0b53077d9"
+hash = "7827984b8c595911733fd212ad8164474ce32c6b1b5a16d49550c10388374ffe"
+size = 5324
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/66/e37583bed0b150e737efc8c5faeee7e027163d"
+hash = "03ce9a104ef5d1f653248dcf4fe6b47842c82b94539e9b315d2b19a2e46b6991"
+size = 765
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/50/1f168f01233cad64a77a45307a60428c8215cb"
+hash = "44459bd17ad4565599a04399172d6acd647a1822c5082303972f5b8c0c567ae4"
+size = 2117
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/50/ca95577378a53f0d1389c11a21a4e31a3bec22"
+hash = "4ea03d88633ff9748c24a5d6dafd8a1d970261febfb114a621ef47dc4bda22a5"
+size = 1291
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/68/da5aa2ceba34ad35b00bce45ee998c0890011e"
+hash = "2b8824d2f3a5d1f8deac1503e6e3bd53fde1405591449b0b65ee2b5fd9cfc111"
+size = 6437
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/9e/0af94f4b460ce975cc3b61d09e85f8f968dc05"
+hash = "101d88047ce5bff750e8d945cd1dbc49fc4e451af232e26f7434ac64eb1e64b9"
+size = 369
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/04/75c79356811aacbbde492054e6747bc6fe1126"
+hash = "0d886899ac6685d33a79ed822b162ac6176f6f61c23a531f834c43634720161a"
+size = 2057
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/35/f53f4af4ecab247f2898577f565b14c6ccb536"
+hash = "702522cb85b320a21c39c182c4ac9260d2de2b0891e5e91a4bb77e91fc53d437"
+size = 288
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/3c/6d06034a4be34c4c69680d1f6b75a9ba0cee95"
+hash = "eae8d07fbb10524e5fecae07ce81a8ba83f3dd9d7dd1403d974039490e777b28"
+size = 1543
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/3c/5aff1f91e278d1c6764ae7c7b3d29d4b5be08e"
+hash = "0b04e1088c249438f72537febbff83e0a5ffb24a53c9c0d550d33ca4b1d3133b"
+size = 92
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/56/07eb100b6120d69af2c2e3d9c259db2847f5f9"
+hash = "60b5a384a81a430b14edc1fb5e05a0e3b63c60628455d4dc095b1a310c2415f5"
+size = 4824
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/3d/00dda878fa041fe46c9de8125b02f4c0d70e2d"
+hash = "3a2ba40873230fb1ac4295c9fcaf83235c01e0526597eab1e1fd105089a6256e"
+size = 138
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/58/26a0d380c798a68c3a89d67b03a6bcfb2824d7"
+hash = "486c861ad27fe0f9c7b30f6d636efb724f116b7ffb9198dbb48531ee872b6b77"
+size = 187
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/0e/7857a126ed858563755f29123df54d9627732c"
+hash = "73927b71058b7718385248b59377ee97aa01b8a75df30493a75ab7f599069593"
+size = 66
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/0e/5c5164a32dbdc8f6df7a5c52d53d2f38648dad"
+hash = "b0d2f1f08571d32888e26e72bbe6549ccebf3bace80a2591dd2cc92be55ef577"
+size = 4354
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/0e/0c2612c5a2dd1d38ce83052bfe529f1d5f10ca"
+hash = "1b1f19ee76ec602252a4aaeef46b0fccf876aa08660c4ee586b330aaeb79a7a4"
+size = 1419
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/0e/4b2a81dc71be0de028a8c8b8c04059ee4654b3"
+hash = "79de8e237e54d4cc671c1798639bbd1f9340642fa182998cb79e68ca6410c612"
+size = 51
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/0e/1ac7f04b0f716e936ccfe40d451c52a1dc01c6"
+hash = "d28d60415b0af9c8023ce74fcbf4544a479a1359cb8b3853551e2ae186ca798f"
+size = 53
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/60/46752eaf7d3aa4b561c2eb2a169ad62c0bb446"
+hash = "7c90b39df0e7934484854cc896fe2e113d6c276074f3b2bac71571963813001c"
+size = 230
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/05/14c57ebc0ea5bdd88d6d7d47ef2f0795f3f678"
+hash = "ece1c3b37b4324cbd8f2eb54dcb7544a5929bf5e1284afbc8b84cc659a5902eb"
+size = 1298
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/05/f83bc8db90d40daa160bf3597c2517afee6a94"
+hash = "b82f9d56690cecad89bf66a53aec8ff65d3e8a4c1b76df4fae1a071c99617076"
+size = 353
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/a4/fe0a907fac8012ddc7f4198f5bd49f30e45ee7"
+hash = "aa942d3c793333ba40a92581cd00bb5acc7387f37c205246571ed31ec6481f2d"
+size = 236
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/a3/1b26fdffb08e37521c64ad3a47bcbb6cf1ff01"
+hash = "493a855bb18e465307879382e747295d4e7bbc8d57ff0f95c89e912896c342ad"
+size = 1391
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/d9/769634e91375a622bc1f6ceaf369492e886612"
+hash = "7ad8edeed8c4cc2711f6d9625bb29279398845b164de27fcbfd6a782d44c4a07"
+size = 338
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/d7/888995bd021a41dd66593d11d0f326adee55ac"
+hash = "1c3bc8ed3284e19866e9fbe9cba9691ce9c491a51a03149f528b25d2d7f54f7b"
+size = 52
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/d0/f000e9602f27c5fbacbbb584e0fc6687755be4"
+hash = "4d272d4444b2d6bada46be7fd9be46fcfb5830a74e53ff9cdd4cfefe4f42b4e5"
+size = 919
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/d0/d68a67d4e14a43e5b6c0bbef7edd1307d2b824"
+hash = "7d86b41234fa389dbd9e9002616de8007a4eceb3b16957f4ff7052ffbd76d7e5"
+size = 8367
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/df/b10dac52d76e6a5dfb246b9f2a27e51a3e3448"
+hash = "73100dd6e3d1f7b075f9fa798088899d9b8b8f0037929e6e34adf167176fc338"
+size = 4767
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/da/65af204ab6d79b12f2e9d7c90ccecfa403d253"
+hash = "6e588e66c3995dc8c4abc18a749c91995a056cd4123d308d11687959fb79d80f"
+size = 517
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/b4/801f0bd5835b029bea22233bbabd010b7c4155"
+hash = "8420ccac5e42257f99b658a688d9503e9f18a59a0c778110ff1b47232a896387"
+size = 205
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/a2/feef8508cca0d7d45a744299342898b927039c"
+hash = "74c39de71c65a3b3e7e34edd8994fbcd74ad6b50bbbad6514ffb39f7f7e56bd0"
+size = 956
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/bc/d672f9746d66f7d2eb5fe5848ebb99485c4dd8"
+hash = "d811baffe79ae10a09ddbbd4d7ca7e776db11afa14424cc64653cc490a160510"
+size = 880
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/e2/1d7bf583dcad1e495087869003a55c01b3d6de"
+hash = "0e8603b996f143e79d6c2ea159b07348369435c16fc2fac85aa648e3a40de70e"
+size = 277
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/f4/c75ee0f9df08757277d14ff431374e1d34b1d9"
+hash = "61e8a4c6a841b28b882a7a3bbf0bff63286f8f7090126e60f243c0c3a0b70cda"
+size = 10977
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/eb/d39b0afdd821a6f549cc230deb0cfcdf49c69b"
+hash = "d3ca6f798722e7d05e732d47229ef46880cd0ade72ac888ba4988475ee407622"
+size = 2808
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/c7/46eba5350dad9484ee8adc88c7a8cc99dacdf2"
+hash = "55248c2d6e1f5f1be0990be9db5ead60d147f65c7b73d19808ad7b46734bf199"
+size = 295
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/c0/94be307d742849fa110546935990edc2973841"
+hash = "65af6d1e44f54e3e09cedc0b8acef9add9e9129233ac4a765653ebbecc1b5f52"
+size = 703
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/f2/330cfc0d7dde92da8a4b3133409f064b20397c"
+hash = "5f31e5da35ea5533bd816d58f31c5339f1901e3d44e89f1d0f27dc5a7d7c96e7"
+size = 1273
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/fe/941bc3924af25b648b95da654ea272e4a85204"
+hash = "34e611765cc6f405d3c1fc27b4bbf1b6c37a945ac09927a939619910ebfc5301"
+size = 197
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/c8/01bfe9cf4ce9317b2e7197ee1db47c18b41e9a"
+hash = "8677663a7c3d0a0dc340f2a5370e366b2549f11522112cf46a28e1da5010e77f"
+size = 311
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/ed/fdad60def5e4358891d4d3602a2fd7d717c1b6"
+hash = "20d9d7c616a87dd5360766297f9330338aa2ba65fe6f53ac82cd1a76f3f616a4"
+size = 1151
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/18/4a45e504610be2a85131cc0d30de0033f9a9fa"
+hash = "5b91c633b553174f4ac5997653de454d36daee576d16041a507ccab62d56fc53"
+size = 204
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/18/f1a877a60d80054874c985f16c1031c5a26dc0"
+hash = "9e06f95633e487c773bf104cce65bcd44d78b8ddca0b552764bedb0f01c1dc11"
+size = 522
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/27/d503d6078234e92601d7a19cc8506c4dd67da2"
+hash = "f6a1cc1baf621efa5217660152c6fa12ab209c8e81620cff3702c86a3c5e1f67"
+size = 307
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/4b/4edb2355a1ffcb4637f5a716d973831c309b9f"
+hash = "c0ec0e6235d00ab1567fe38c40c9758aff6e114c562be4f4253a35798db0adbb"
+size = 1153
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/11/d6b034f409d12b8ff43403eabde3f602c74f0b"
+hash = "ce0e8f650b73b6019e4da1c7bf2ca3f79d7a720f8724382c7b45e089a2d9b445"
+size = 122
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/7c/709f375d00d00e5c08cdbeb279ee56fd10a15c"
+hash = "60f68823bf286dbc44f2979e185390f78913c9d3fb2c480605e3079681ee8a1e"
+size = 69
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/42/75d246e82f774ce14f6c1a668fb8a13b31ee23"
+hash = "7673f6d0da700135042eca0dafb504dc3eff26db3ac2e26d9e4f14eb3a8169d9"
+size = 1183
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/42/687dc709f67387cef8ce6a8b5f314cee40c04e"
+hash = "8e2534dbd5f083a299a0189138d087c6d86275c34880dcc85016affdee5f07db"
+size = 804
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/45/f02b2e5d3d204d26f7a19cba119bb0311c9ff8"
+hash = "b0ae890bff9bb22d8d93438553c9caf4828b86269ac69a4f711ede25b7c692b1"
+size = 2801
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/73/1cc78d9c8a8930f1df033f7c965c61dfc236af"
+hash = "2942f63ce19aa6b2a8fb1f4a112cfff8daae8c9988009ce41b245b9a66bb73c6"
+size = 248
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/87/5af037d4fb1c0f71a34e6b37f88b0527bbcb15"
+hash = "8a8f1452ba1e4cce864eb0e99b35a7047c4842cd3829436c5f5eba47a1dd4d33"
+size = 8458
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/17/5504cc9cff0d7d45bc38877f6cb57ffc044f59"
+hash = "d4abcb4b916afbb027ca452f20b1c2ed82c9a16568a77a07570bff50575e70d7"
+size = 1031
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/17/cc263fdcad5b56b1fd10da06645a6bc488ed26"
+hash = "893525805679896b3fbf522be419c745a94891d5d9144d89240527cb1b5378e0"
+size = 214
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/7b/2459d0e6a07eaba4355f9cdd1b9cc358a26e44"
+hash = "f296b5947913a829d9a222d19e0f49019e9fe124c12ce34f0c1c88662d579da9"
+size = 92
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/7e/7bd36b8fbc20931948afc6f31732fd1036a105"
+hash = "a852f3317bd601fec7abb8cf5f759e858b548708dc9f5d9ca73416c0b420e935"
+size = 338
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/26/60e409e2e346768e0c21dcf906590710b9536d"
+hash = "ffb84f40ea4148578083333632400b0c3fa8ce509f2d7dab11a83e4dbf4cf81c"
+size = 208
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/21/90582dd0fefc5f4a718a960966fb575e112bec"
+hash = "892168fa30ed8615f7979283f94d4757e69bd79cbcb3b84394c53bc20e0888c4"
+size = 200
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/81/be49f8f0059f232f12d4c1ddcf12b434c28e0a"
+hash = "6f05ac861ae9812e0f9086bf51e2358d4036f5343120bcf18e6394f898fcde33"
+size = 519
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/86/a80485cec54e67b80cc07d5268a67582006c19"
+hash = "5bf3260a887577961a1ec58f79e01c37fa01e7a14659289777e48277325775f2"
+size = 53
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/44/6af38c48a8a433607c89b888ae1878840151f8"
+hash = "084ed3cca8c2c60a197ba5cbc82ae84c3191e4d5cfebf0291357890ddbdde019"
+size = 619
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/43/1ab96e139c7bc5466df491f0e683cb1fc70537"
+hash = "3ed3ec16cd78b299bb5ad31e19a06d11d6498cf07409809f11280dcc5ecf7280"
+size = 102
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/88/9b9f48b83fa45e0e9dd36d77d8e6387dc7d2a6"
+hash = "26bcf841f30de9eda7bac29df08ac48b02567ae88272b41a9829fceaef401d9e"
+size = 534
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/9f/81badf79aa4f5c6ca1e90335d9e5617ac412c5"
+hash = "00adf82b4e4301067cd4a5d104947e19cfe8e97ad9a6bdbcdb0915456359f0eb"
+size = 72
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/38/c767156cd0661bed9063207e3087b86d572359"
+hash = "78739cbec2cdb39aadcae1cbe985d39b10c836849273efe7cb7bc213a5f8f7d8"
+size = 2762
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/36/7c1b8f3f38d608663045eecada7b9a2d7f61cc"
+hash = "f939ecafbf2f7a6e02b4f6139af588b92bc6fccd18fcad44194acd177978bd68"
+size = 96
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/5c/fb4424f675c00132caa04076669772463a83e0"
+hash = "1441b8f1a297349b1a87e5086e7d0c3ac22a96cc78a79e88cb19960c1507dbe9"
+size = 1941
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/5d/5f9adec6a4f1c53b62d9e5b6bf85a43400036c"
+hash = "8ebdd10a1d43aa54e2078512cb06299153017c1468c25fcda607759897445959"
+size = 3507
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/31/5a44cec9dc18f70960facd34f7ba9a72b5c881"
+hash = "03b4d716ca309761058e9f6bd04448ae7f63b48be055fc95c2ab7d9ca850767a"
+size = 868
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/91/d274dd51f9f15a9ad5c4a05b44b2d11824f35d"
+hash = "a25ebdf822fafa9f0c5c3ed2fdc4eba63a84a9bfd7e94e45dda73d68caf16bef"
+size = 259
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/96/d9dd3db5a3fe2cbfcc1a96cf6e26820524068b"
+hash = "1883eddf84866f8a76acb43c78982d4b417b862c50a851d0fdd341cc0d6f302e"
+size = 1599
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/54/9948acd70619e0fda66125afce3915cccccbf6"
+hash = "718825b93b6010e9e4f8e2354ff4d820627d5f4aa21f65d87e34065a54220c01"
+size = 244
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/98/035b6903c3d52bddd08e199925d20c37a8f393"
+hash = "59ab0c8e71cdb44785b471e3a2d7227c91ef1cb6241ae095dd22d719a4a2bcf7"
+size = 1039
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/53/bcc8deecaaaf38a0ac5fb8813eae0dbd27798e"
+hash = "c25ab7a2d9674abea31de8cd37aa951361ef9bb18046999fbe1f3f5e3b73dd54"
+size = 2913
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/53/0e01edba8cec5dbb0ffbecdfd6ec67f8ab51b5"
+hash = "f28957ad673b5b8af336ae4ba429926646d4812e33bcf725896890f3f4b5f2a2"
+size = 291
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/3f/f4a76dbf7965242b9beb8cccf9370d661e0254"
+hash = "f64923b7385b230b7aa5017023d65ec1fda4103bcecf717d56fa550eeea2dfa7"
+size = 752
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/30/1f6449a6d24042bc01fc4ad953d724ec47a255"
+hash = "54942df584e3ddca837d33949f20ef8e8053b9ee7abcd49524c48adc4098b655"
+size = 46
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/06/33f1360e2d58ee5b837fcfbff8d27d57530102"
+hash = "ad4ef274e999af622b523dc47b0c594df02fe08a4bede83d136014071b996fd8"
+size = 657
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/06/88ebea0e8d8c3b49a5057b04fa6af5482c408d"
+hash = "471ec5aadebf0a4ee15c092ebd65682051b0a9b46d52773383572498edaf58f4"
+size = 81
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/99/3b847992fa3771066fe82eccabbc7522502637"
+hash = "d662ebd5b71a5cf6b163510fa7ef874cacfb29df001f9052358c08c73d20eab9"
+size = 6648
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/52/bc56bcee8d39ac22f08000a4c8df4f57223c6f"
+hash = "122db803c8453c4e7b391b25016cc1f6e5291929c449e599f614e0b38fd11736"
+size = 369
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/55/abbcf5bed33427c158176b0ea29ada06b604ac"
+hash = "49ea560b16e160a7d20c798f991ab6af0ac0c22e1c496f42eec618d220b34260"
+size = 53
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/0f/febe42b1079eb59a79c595a328ed6365292c4b"
+hash = "4302057dae287058738f82ab699cd888a93e48e2d5e75b19e4494df1e22fa4b7"
+size = 940
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/64/5dc4f2dfd75ad824bd75726af03fb980e0bd13"
+hash = "c6421c944857b0d57e89a3ae7b5d33f163c9be4553eb684a7130f7c55059de1b"
+size = 543
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/bf/209814250786333f3522a5e9151e09050dece7"
+hash = "494e4cd86c5c01839a8934763e760be22e02dcf5e3b576c21d0f04bd96af64b0"
+size = 4795
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/d3/53ca229fc540e6fe3e98a9555d4ad41133febb"
+hash = "92197cadc6a2533273e662dc41f43692bd3696821882bdc8431c0ad981b746b9"
+size = 5361
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/d4/84dd70723075d4e3abc769cf6fc35c7a998fa0"
+hash = "c00a61423fdef0c9062acb6cc02288a4d22602dcc1d033a271ce5b32f9d74dfb"
+size = 6898
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/ba/ed998eb5e188fc31e441648121b082e72717ca"
+hash = "817570a7b8d93fe12013fd8a13ab64328b0c8c016562466716488ae1467a3836"
+size = 1752
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/a0/4325a8e3afecb43a04ca870629f7f15327a724"
+hash = "23f71e4a12136d30450b1efd22c33e4eea7fe7664ae5d4cc1ebe8868d1d740e4"
+size = 68
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/a7/542a3bf37cfd0fbfb592c215da871075d8e852"
+hash = "6cf74953d75eeef941e02492c04853771ce9f31172cf4b354b8cf2e1d70bcb71"
+size = 229
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/a7/fa0386e4577dd0f1e868d2ca856983f366157a"
+hash = "df3b4e1b0c1b50fd6f10b6f8d7927ed89148c8b669e14b9b6bd4236bb2c4befc"
+size = 226
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/b1/299050a3ae3a2c5ef0e60e679e60fd9f24572d"
+hash = "4a27346cc652d395d60fe587cdeab3b8c12cc83e96d975e287e134eeb93317c1"
+size = 15538
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/b1/85d39d7403c7eb9e1dd0782b29cdb73d2bbe95"
+hash = "d24d81e0d2c123fb5d76882cb013d52819c78b6858fe829b447cd671374e8356"
+size = 59
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/b6/d235260d27b2ce318503c855a29361ee014ad5"
+hash = "310c684939c0b97ae07419fc95f01334250863198ea1633dabb5bcb2ba3e9334"
+size = 53
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/a9/dd2937cf7c178022e5f5bcb1bf016ee0d7dbbf"
+hash = "0a8adc331586d41f56039d422016e4600439227efa1fbfb820b7bcb145d9ec51"
+size = 310
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/a8/d0ef84f1379323ed3fc96fcffb57e400b5c6c5"
+hash = "e2f18de3d5b96b675bfc52de9df2b0383834d56d4df370f39fd064f8d002ccd3"
+size = 52
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/de/ce5afa7d9d4b84c4e54ff168043817313ca673"
+hash = "6f0d97abc4d94185978e2d9cc0ae5148b87c2489bb6cf9cdb9b4b33c57ce160e"
+size = 205
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/a1/a7f23c6e0fd088402b2ac0e95098d189ecf053"
+hash = "234388516b4006780a6914aebb84ed7c0a1943161ba6cfbe63661d33b0d73c32"
+size = 11645
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/ef/95cc79e8f3cc8431ee7f5fe0915f0ca0227946"
+hash = "d6e1e377f44c85e72b1689e3e82027091de1264010c73436322b85600e25699f"
+size = 127
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/c4/19312ddb1e8561af77ab3b6e4045c3bd265bee"
+hash = "2801d97053c3d5838d58d0ed10e8b8118cb157fc3f966fd53c896745819ddbfb"
+size = 1601
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/ea/8c4bf7f35f6f77f75d92ad8ce8349f6e81ddba"
+hash = "f1464513898ffe09d5fa4bab8608a13c1eebc805a742449fbfb8a1ce1f765e8e"
+size = 23
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/e1/85aeaa40d3340dd9fa94b66716d034bfb1ee5c"
+hash = "dbec35c1d60c4d71c2c85e18ab9b2af8ef12693b7f1f424a3e87d8da5871b3ed"
+size = 51
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/e6/b07617def041c012743e2108bd865d3e748d21"
+hash = "cfe3af9f37ac1ce443449af0ccf06c3fdc458284395a905da70033de4a94f848"
+size = 814
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/e8/fc553e60e076fc5613fc94af230de24d0d19a9"
+hash = "f57cdcd586564fe8993217c2ce2f045d4b49c3510acb3ed4374364ed5c2abc38"
+size = 143
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/e8/6b11dab1a51f32c325f0495a7337565e45aeee"
+hash = "010c1e2b8b5edface144d3b22074cd1f0b93ae14a1023160255c82aca5b8d924"
+size = 139
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/ff/9f75ca0d1a5ab4b59071c9912a56c667c2ea5b"
+hash = "dc8c8f344f1e940aa48f0a6a4582163d7deab316a22fe2a50ce717f043f7ebb7"
+size = 1079
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/ff/b3fd2de8ce9aba2eb8bf203646701dbda08052"
+hash = "16b5159f8a9aabd9fde652fd4d7f1d6a44bea1e2e5faefd801c9b4b83ad64b42"
+size = 1141
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/c5/4b51a9fb071d16732cde992e6e26a178b06af2"
+hash = "f4ce1b3d4d7dba9f8fd7d94a466e23784333040c6c2f765d4fb58e33eb2aee33"
+size = 67
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/c2/6d9066f5017354850639cdbf01b88195f15f81"
+hash = "fe8311ff84b4edb5e107fc526ecb16013cc25066f94ec7fa57c4a00ed4347244"
+size = 120
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/46/3185a0b642ab5094d0b5ddfe3c9c7711828d5d"
+hash = "6ce4fb730c3e135b90b5fe8cac6a704446ea319363ea4b4ce9df3c519623bd3a"
+size = 283
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/79/ace4c0c8ec1adfd6538548b8e08c8ef18d177c"
+hash = "5119c47774afdb04f33517945af9a530dcc491fec63afb998b9edc6890de08e4"
+size = 17680
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/41/70b26b6b45e5728def60464b57b0b9fc5f7b80"
+hash = "2622e8a9efd32875ce7020b6c55f022a1ce934bc76881bd8fea5eda1734234a3"
+size = 170
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/83/20d66ef1ea3f268cf248813e3fba0e1e5cc852"
+hash = "b29e2d2a2ff0ffa845edacad97cb465f666afb4749b6f5378e0fa4a0fad8f430"
+size = 125
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/48/ca85733697dbee1a19ea434af3ea92ab4a3ae3"
+hash = "b85bd6445cb7935bca1c9d3b2e52d41f2ca05d3b724b3bb89a79333ac0723788"
+size = 3774
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/70/4e5b12c1d93e6059fd6b57ee803b5fc8190033"
+hash = "ead1f2fc2d3268e4be313a0d1f27166f8125fcd598b1931944a3e0790dc18ed3"
+size = 1290
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/1e/766284ebe2b732ee979d4884cfd2e3ab8be5d3"
+hash = "a31baec05221b247f6c3b05e1d81f71eda6df3ae6bf9edbb77e76485e3d56012"
+size = 1180
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/4a/5ba2a427ec06b7468a62b54e841dc28c6fae2d"
+hash = "afabae638edb1a3a2ad5ad4624eded5ae1275e086d42a14f071496872dac5b39"
+size = 737
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/24/00a0315e665ca19f67d29148142dec82f45ac1"
+hash = "019dd91cdaac904e032ed14457b4f81159c6f1f7955599846e15be41c3913a93"
+size = 411
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/8c/f5d5d71e4385ef49037ced0ec88d653cb6e303"
+hash = "f2300d1412f0ca7d317aec57c4adbe86e6fc5874fd121814b756c076f3aca974"
+size = 429
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/71/621f0b749d707740d34320e15b9b4c22788c39"
+hash = "25daaadb75bf74c06f22c9fc6db810d55404065e8c8b150159e3a7745618ca20"
+size = 556
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/71/9bb69218c1c4934ed9c73fc48cc0da253b645c"
+hash = "dbc26e3b05dc2b55d1876a65f4353d72d2f45f242e7bf7fc19df5b8c25adc233"
+size = 53
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/71/18dea1be14d88edc4f82e6e7136c51f2741c90"
+hash = "8f0ffd17e17c2fee5da56dfb430e84b063e2b23aee32f8b9e705920ec2b68396"
+size = 292
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/82/dd3bcf354bc6013ab0fe2f7bfcb7e81c969ce8"
+hash = "d0e8f36b6c6fb49637b9410d94988873a176ebe0af6aed3f349efb88a6599537"
+size = 176
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/40/cac2b459b45025fab508626bc252c34543e920"
+hash = "261f53d1df801696f52024a28b0d27cd3341beec6beb93e91593f49b1a73d2dd"
+size = 116
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/2b/3d177a86ed82b0d8432cbb96330908e48d4521"
+hash = "db9e94085228f7c6e1cc0244093a696798d836d06309133bad01a195fa8ef5e6"
+size = 1476
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/2b/e3ac540fad48198622a7d581609d13dd269d50"
+hash = "8c38f39efda836b8d79fe457bf2404f2620c525a3e527fc7c8c1433abec63978"
+size = 842
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/13/52f97d7caf161a552ef50822b3714479f54b2e"
+hash = "5fe139922b067ea5e05166e8e1e98d1a3381be983d57219a4ed155612cfc88b8"
+size = 103
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/7a/f1d6d69587ce65a0c0e8d4457f0c7ea7ae4877"
+hash = "a118af25e63e34817961f9330c835bf764d1c9c48564815ad610e2164155eefd"
+size = 148
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/objects/22/8d7fe87693deb1f0b77aebb0cb3c0aae3592a3"
+hash = "4e116fcf924cf2e329dd4cdc0f5a8f40fc8e9f5323636491ff781013a6f0733f"
+size = 90
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/HEAD"
+hash = "fe290f1e844d70e47e1a7bb695d33b7de29b9993de7151c78496c72912eff2dd"
+size = 21
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/info/exclude"
+hash = "eeb5e93dae4cd0278f567590afaceaf6a250e2b6c9f9cac85c36c0173fc59732"
+size = 113
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/logs/HEAD"
+hash = "09b6a9f47e0c4da7cc3b55ff9f8fe3233be763f04e56c9fd97c8b8a87b1a8e37"
+size = 1114
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/logs/refs/heads/main"
+hash = "f10f67360e5af40ba3d583f6ce2cfa9eef4f2af6c9790585d5bcd3dd2e7729ab"
+size = 928
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/logs/refs/stash"
+hash = "e10059091f419259dbd42109131a40ef634429394f77719c5711b1a9d03378b3"
+size = 277
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/description"
+hash = "6be58b34ccef43af2d3a9ee6bbae8865c947cf89ea9799e9012ec30a1b2b7df0"
+size = 73
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/hooks/README.sample"
+hash = "8cb52cedd01c8ad2490cebaafc8da585360c7311cf2f9926c03fd3926002d5e3"
+size = 177
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/hooks/commit-msg.sample"
+hash = "2916fb1a35f3a2a754ffaea461d4ad46a7f0da0317e22e7f6d748c19949c8953"
+size = 896
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/hooks/pre-rebase.sample"
+hash = "835104a2b89a3641f948adb1f742bf5a3092918da7e39cc336e1c49e557c8cfb"
+size = 4898
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/hooks/sendemail-validate.sample"
+hash = "e07d7b9375ac5a17bb7c8442e32a300710b29c550fe000451668e10c5fc1fed4"
+size = 2308
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/hooks/pre-commit.sample"
+hash = "8478f305d4ce3140994fdd77bed03a9910f8a1dc681a3583ab52633386464f18"
+size = 1649
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/hooks/applypatch-msg.sample"
+hash = "b3c40deed0a5a457431cf0c7c16611fd5bc3a07398393a108d3d234529c2770e"
+size = 478
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/hooks/fsmonitor-watchman.sample"
+hash = "930bf1c7f1731ff8fa12cf76eb30d4c79953e5e8c7adadea0d83df4362e1d520"
+size = 4726
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/hooks/pre-receive.sample"
+hash = "a81c361d5bca20e01ec23432873485fa288789b43215deded7be4a04e33d91ca"
+size = 544
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/hooks/prepare-commit-msg.sample"
+hash = "2584d6af1323f941bd6b539600c230028e41e8447be97c93f2a5f1729b1468a3"
+size = 1492
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/hooks/post-update.sample"
+hash = "992f105ba569baffc065e18972630438c1242d6b5bb69cefe01f598428fee987"
+size = 189
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/hooks/pre-merge-commit.sample"
+hash = "b5935999ae5116c0bd8eb3eab71cd3eb135a5ba9c34883d2f4a8743a19b2e4ea"
+size = 416
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/hooks/pre-applypatch.sample"
+hash = "92d9302b5f429f5b48c5f923e998d4e9b38996a7136065bfd8124b10151c81f8"
+size = 424
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/hooks/pre-push.sample"
+hash = "9995042fdc515df6c335b560d88334f5fce224acd0458809de0f976ccfec33a0"
+size = 1374
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/hooks/update.sample"
+hash = "c6b8b77a4b49f6b6554ff4b437c2735757e0998aa4e3c3e3f8cf278a04555e9d"
+size = 3650
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/hooks/push-to-checkout.sample"
+hash = "3aa6abcd20b772fb2d5fd41ed0094446537cc914b3fc5a3a8d8435bc5cf9383a"
+size = 2783
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/refs/heads/main"
+hash = "92ecbc5bd1ff301d5679fb3827612f90c21cd199f27083e83f0f00eaae2cd4a7"
+size = 41
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/refs/stash"
+hash = "9c2a06067d5f4eef6034511c6329eb010844c662dbfcc29b01158f26d43f583f"
+size = 41
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/index"
+hash = "d00796070108266f8d52b62451cf78ea08cc5a86d53cb839c380fb77b0c1cda0"
+size = 5805
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/.git/COMMIT_EDITMSG"
+hash = "b6e4108d3c8d9d0d2f60b0004c86ee3a39cc358c7d345838b0ced4f39c775894"
+size = 45
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/src/ledger.rs"
+hash = "271e76292fb80393ee9ce00350f568c374f37b1ff9cb3f9faa43b212a922ff8e"
+size = 18730
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/src/avatar.rs"
+hash = "7d2af6c17f1513d2bec1fd81475b2f456087dba1dfccb43fa50cfc4dba208ad6"
+size = 446
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/src/error.rs"
+hash = "1a954a8d14ee78e2826033459c4cd193229df3668c7f3535bf08a114789bf15b"
+size = 1241
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/src/kernel.rs"
+hash = "e1d1244f0223c035fe262e18670bb11e14c543b1051ceb2f3b93a6e5bdbd734f"
+size = 2751
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/src/lib.rs"
+hash = "884a96d39d57125d15e0feb96a8cc11445379bce16e5d961915a77ba2274b1af"
+size = 235
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/src/domain.rs"
+hash = "ea49549c0c81200b828f8114b118ae652ec96b798f0cbafb52cb9daeaa2bbade"
+size = 15275
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/src/obligation.rs"
+hash = "9a75a0e87f0a950c3683d79536ba792d89e2015f187787bde0a01f8e3d2d88b9"
+size = 174
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/src/canon.rs"
+hash = "dc4f997b9b1a1f18b58f3fa8143093259edec620b95701e0775e621ca7aea85f"
+size = 194
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/src/verify.rs"
+hash = "547ca51b0fc0edc4526d7f02aa9a03cb05e46e703c6916084da86854cdc4e8bf"
+size = 2471
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/src/actuation.rs"
+hash = "e551bc0ce47eaa51d5ee89ffefff5150b7d300ed733124a79ac3d00dfb9acbf1"
+size = 116
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/src/parts/pentecost_invitation.rs"
+hash = "79e9acaa8454821f016c331eba302232031805b3a91fbd9cb38f1ef251b62740"
+size = 1991
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/src/parts/continuity_watch.rs"
+hash = "91260ef229ff4a718e34098ace8502475f6bd8cf2fa151e37f195431bd918053"
+size = 2344
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/src/parts/assign_steward.rs"
+hash = "a77dbcc904acce69aa643f1b2b3eb443ddcf9679debcdadeb0264e015ca69c83"
+size = 5542
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/src/parts/follow_up.rs"
+hash = "d5cf1f39a37010cd46574c990ccf1d59d3a76fe105d2bcae77ef8ff635e73def"
+size = 4431
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/src/parts/consent.rs"
+hash = "ec8b7cf20b6db102d2fc6ad1623266171f81f8968c577abb62c5d6869be0934b"
+size = 4278
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/src/parts/mod.rs"
+hash = "2adb12a2fbbc1dd6a4449af5dfb77312f225ce3cfd4fa9e3dbac94d0ff18b847"
+size = 267
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/src/parts/welcome_one_another.rs"
+hash = "30ee5147e6638197d0027b22b923029a706cb302fdf0602801537601226100f2"
+size = 1673
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/src/parts/welcome.rs"
+hash = "ced4e38e8db5eec4e1bc24e444456aaccda7ace688d7dddac0150f7913005727"
+size = 2772
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/src/parts/follow_up_obligation.rs"
+hash = "b20cc44e6bf0414468c3a021d5c726b61aa93bf57e9eb357ba4fd627e5e6b6e0"
+size = 1357
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/src/parts/consent_gate.rs"
+hash = "f061b2a59f298669257504de62f6eb9b7b04c7b992b9c7fad7bd5e4c641745d0"
+size = 2167
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/src/main.rs"
+hash = "0d564bd5292dc15813a5cd540290bb201d242eab8095d9474d902e628beaf48c"
+size = 108
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/src/origin.rs"
+hash = "83b8d182f640e0580831c29d1e57250ed581bc47544380de07875729bf7e7292"
+size = 255
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/src/lifecycle.rs"
+hash = "09d40d8065bb33ab433da3e1a34ffeb6c9ed7c78e999aa93b57b627c12b122e7"
+size = 252
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/src/sync/background.rs"
+hash = "fdde8ed938a0c71f01d7faeed1a17112039903a5ef984ee34b8c35c6101b122c"
+size = 3676
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/src/sync/sync_engine.rs"
+hash = "8c5d2b3568d6e7403372ea026f43de27b3f843abc3c437cf1bf89e6242496192"
+size = 5029
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/src/sync/conflict_resolution.rs"
+hash = "92f76d04df2d3a242fd69ee90a896218d084d983edb412b8400b055a63e6e0bf"
+size = 6046
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/src/sync/mod.rs"
+hash = "43e8515ea8d749182b8f898c991af5232e67831d4606c203328f7349d8249f5e"
+size = 2132
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/src/sync/supabase_client.rs"
+hash = "8721c91e22635bf797a97c0eb78c59556d73f1cf9596344716370ef27ce942c4"
+size = 5263
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/src/data_split.rs"
+hash = "0f63e920560eb76b911ffc27d54a9d02cb74210ec380e4636a7c6edf7b9694ff"
+size = 102
+language = ""
+
+[[files]]
+path = "/Users/sac/stpnt/src/crypto.rs"
+hash = "e0d5fc202bf21a08bea4bb0caca4fca6b06d1b363ba0f2209d7c2dce14db5654"
+size = 1577
+language = ""

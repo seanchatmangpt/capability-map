@@ -1,0 +1,77 @@
+You are implementing cpmp v30.1.1 Phase 3: Capability Cells + GALL-CAP Evaluator.
+
+Context:
+- Phases 0-2 complete: cargo check 0 errors, canon_basis[], 7 receipt hashes, Gall Checkpoints working
+- Plan file: /Users/sac/.claude/plans/cpmp-v30-1-1-sharded-steele.md (Phase 3 section)
+- Goal: Implement the CapabilityCell primitive and 10-layer GALL-CAP admissibility evaluator
+
+New file: src/gall_cap.rs
+  - Implement evaluate_cell(cap: &DetectedCapability, file_symbols: &[Symbol], catalog_dir: &Path, scan_id: &str) → CapabilityCell
+  - Implement 10 layer evaluation functions (each returns GallCapLayerResult):
+    Layer 0 (PowlRoute) → NotApplicable (requires runtime execution traces)
+    Layer 1 (OcelEvidence) → NotApplicable (requires OCEL event log)
+    Layer 2 (ProvGraph) → Warning (partial: scan IRI exists, no full history)
+    Layer 3 (ShaclRules) → Pass/Fail based on cpmp-shapes.ttl existence
+    Layer 4 (SpdxIdentity) → Pass/Fail based on file path + checksumValue in catalog TTL
+    Layer 5 (ReplayFixture) → NotApplicable (requires test harness)
+    Layer 6 (SabotageCorpus) → NotApplicable (requires adversarial harness)
+    Layer 7 (CapabilityClassification) → Pass/Fail based on non-empty classification
+    Layer 8 (RuntimePackage) → NotApplicable (requires registry check)
+    Layer 9 (ExternalVerifierRing) → NotApplicable (requires open-ontologies verify)
+  - Derive admissibility from layers: Refused if any Fail/Refusal, Deferred if NotApplicable, Admitted if all Pass
+  - Infer inputs/outputs: inputs = fn symbols in file (except matched_term), outputs = struct symbols in file
+
+Modify: src/models.rs (Phase 3 extension)
+  - Add GallCapLayer enum with all 10 variants
+  - Add GallCapLayerResult struct: layer, result: GateResult, evidence: String
+  - Add AdmissibilityStatus enum: Admitted, Refused { reasons }, Deferred { layers }, Pending
+  - Add CapabilityCell struct:
+    file_path: PathBuf, capability: String, matched_term: String, snippet: String, classification: String,
+    inputs: Vec<String>, outputs: Vec<String>,
+    lineage_iri: Option<String>,
+    gall_cap_layers: [GallCapLayerResult; 10],
+    admissibility: AdmissibilityStatus,
+    refusal_conditions: Vec<String>,
+
+Modify: src/scanner.rs (Phase 3 integration)
+  - After rdf::build_and_emit (so layers 3+4 can read catalog), call evaluate_cell for each capability
+  - Build a file→symbols index for O(1) lookup during evaluation
+  - Collect Vec<CapabilityCell>
+  - Call db::insert_capability_cells(out, &cells)
+
+Modify: src/db.rs (Phase 3 extension)
+  - Add capability_cells table:
+    CREATE TABLE capability_cells (
+      file_path TEXT, capability TEXT, matched_term TEXT, classification TEXT,
+      lineage_iri TEXT, admissibility TEXT, gall_cap_layers TEXT,
+      refusal_conditions TEXT, inputs TEXT, outputs TEXT
+    )
+    (store admissibility/gall_cap_layers/refusal_conditions/inputs/outputs as JSON blobs)
+  - Add insert_capability_cells(conn: &Connection, cells: &[CapabilityCell]) → Result<()>
+
+Modify: src/rdf.rs (Phase 3 extension)
+  - Change build_and_emit to accept &[CapabilityCell] instead of &[DetectedCapability]
+  - For each cell, add per-cell triples:
+    capability_node skos:note → admissibility_status_string (using rdfs:comment for evidence)
+    capability_node prov:wasAttributedTo → lineage_iri
+    capability_node dcterms:description → each refusal condition (repeated triple)
+  - Add SHACL shape for admissibility:
+    <#AdmissibilityShape> a sh:NodeShape ; sh:targetClass skos:Concept ;
+      sh:property [ sh:path skos:note ; sh:minCount 1 ] ;
+      sh:property [ sh:path prov:wasAttributedTo ; sh:minCount 1 ] .
+
+Modify: src/lib.rs
+  - Add pub mod gall_cap;
+
+Success criterion:
+  1. cargo check produces 0 errors
+  2. cargo test passes all tests
+  3. All CapabilityCell values carry AdmissibilityStatus::Deferred (expected for static scanner)
+  4. GALL-CAP layer results serialize/deserialize correctly
+  5. RDF triples emitted correctly with admissibility status
+
+Implementation notes:
+  - Layer array [GallCapLayerResult; 10] is fixed-size and serde-compatible
+  - All valid cells from static scanner will be Deferred (6 of 10 layers NotApplicable) — this is CORRECT
+  - Refused means at least one evaluable layer explicitly failed (layers 3, 4, or 7)
+  - Store layer results as JSON to avoid schema explosion (10 separate columns would be unwieldy)
